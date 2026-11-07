@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Crimson Requiem — Pixel Action</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23090b12'/%3E%3Cpath d='M16 4 28 16 16 28 4 16Z' fill='%23e83f50'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="Crimson Requiem pixel action game"></canvas>
+    <div id="start-screen" class="screen visible">
+      <div class="title-mark"><span>CRIMSON</span><strong>REQUIEM</strong></div>
+      <p class="tagline">A demon-slaying pixel action game</p>
+      <div class="start-card">
+        <p>THE CITADEL OF ASH</p>
+        <button id="start-button">ENTER THE KEEP</button>
+        <small>Arrow keys / WASD to move · J / Space to strike · K to evade</small>
+      </div>
+    </div>
+    <div id="pause-screen" class="screen">
+      <div class="pause-panel"><span>PAUSED</span><button id="resume-button">RESUME</button><small>Press P or tap resume</small></div>
+    </div>
+    <section id="hud" aria-live="polite">
+      <div class="hero-hud"><div class="portrait">◆</div><div><div class="label-row"><b>REQUIEM</b><span id="health-text">100 / 100</span></div><div class="bar health"><i id="health-fill"></i></div><div class="bar devil"><i id="devil-fill"></i></div><span class="devil-label">DEVIL TRIGGER</span></div></div>
+      <div class="score-hud"><span class="label">STYLE</span><strong id="style-rank">D</strong><span id="style-name">DULL</span><b id="score">000000</b></div>
+      <div class="stage-hud"><span>MISSION 01</span><b>ASHEN COURTYARD</b></div>
+    </section>
+    <div id="combo"> <b id="combo-count">0</b><span>HITS</span><em id="combo-word">—</em></div>
+    <div id="message" class="game-message"></div>
+    <div id="touch-controls"><div class="dpad"><button data-key="up">▲</button><div><button data-key="left">◀</button><button data-key="down">▼</button><button data-key="right">▶</button></div></div><div class="action-pad"><button class="evade" data-action="evade">✦</button><button class="attack" data-action="attack">✧</button></div></div>
+    <div id="victory" class="screen"><div class="victory-panel"><div class="victory-kicker">MISSION COMPLETE</div><h1>THE KEEP FALLS</h1><p id="victory-copy">The crimson gate has been opened.</p><div class="result-line"><span>STYLE SCORE</span><b id="final-score">000000</b></div><button id="retry-button">REPLAY MISSION</button></div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
